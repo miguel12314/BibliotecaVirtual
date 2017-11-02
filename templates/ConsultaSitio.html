@@ -1,0 +1,39 @@
+<section class="wrapper style1">
+    <div ng-cloak>
+   <md-content class="md-padding">
+   <h2>CONSULTAR EN SITIO</h2>
+    <form>
+        <md-input-container>
+           <label for="">Matricula</label>
+            <input type="text" ng-model="Matricula" required>
+            <div ng-messages="Codigo.$error">
+            <div ng-message="required">Falta Nombre</div>
+          </div>
+        </md-input-container>
+        <md-input-container style="width:100%;">
+           <label for="">Tipo de Identificacion</label>
+            <md-select ng-model="TipoIfentificacion">
+          <md-optgroup label="Carrera">
+           <md-option value="ITICS">Ing. Tecnologias de la Informacion y Comunicacaciones</md-option>
+           <md-option value="IGEM" >Ing. Gestion Empresarial</md-option>
+           <md-option value="IDI" >Ing. Diseño Industrial</md-option>
+            <!-- <md-option ng-value="item.value" ng-repeat="item in items">{{item.label}}</md-option> -->
+          </md-optgroup>
+        </md-select>
+          </div>
+        </md-input-container>
+        <md-input-container>
+           <label for="">Libro Consulta</label>
+            <input type="text" ng-model="Libro" required>
+            <div ng-messages="Libro.$error">
+            <div ng-message="required">Falta Nombre</div>
+          </div>
+        </md-input-container>
+        <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+            <md-button type="submit" class="md-raised md-primary" ng-click="enviar($event)">Enviar</md-button>
+            
+        </section>
+    </form>
+  </md-content>
+</div>
+</section>

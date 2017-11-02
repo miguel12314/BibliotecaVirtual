@@ -1,0 +1,96 @@
+<section class="wrapper style1">
+    <div ng-cloak>
+   <!-- 
+   <md-content class="md-padding">
+    <form ng-submit="enviar($event)">
+        <md-input-container>
+           <label for="">Codigo</label>
+            <input type="text" ng-model="Codigo" required>
+            <div ng-messages="Codigo.$error">
+            <div ng-message="required">Falta Nombre</div>
+          </div>
+        </md-input-container>
+        
+        <div class="md-fab md-button">
+          <md-tooltip>
+            subir una imagen
+          </md-tooltip>
+          <md-icon ng-style="{color: font.color}" aria-label="backup" class="material-icons step ng-binding md-48" ng-class="it.size" style="color: rgb(170, 0, 0);">
+          backup 
+        </md-icon>            
+            <input class="imagenes" file-Model="imagenes" type="file"></input>
+        </div>
+        
+        <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+            <md-button type="submit" class="md-raised md-primary">Enviar</md-button>
+        </section>
+    </form>
+  </md-content> -->
+  <md-content>
+    <center>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+            <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
+              <i class="material-icons">search</i>
+            </label>
+            <div class="mdl-textfield__expandable-holder">
+              <input class="mdl-textfield__input" type="text" ng-model="busqueda" id="search" placeholder="Buscar Libro">
+            </div>
+          </div>
+    </center>
+  </md-content>
+  <md-content style="height: 507px;">
+      
+      <table class="mdl-data-table mdl-js-data-table  mdl-shadow--1dp">
+          <thead>
+              
+                  <td class="mdl-data-table__cell--non-numeric">No</td>
+                  <th>Codigo</th>
+                  <th>Titulo</th>
+                  <th>Autor</th>
+                  <th>Editorial</th>
+                  <th>Edicion</th>
+                  <th>Clasificacion</th>
+                  <th>Ejemplares</th>
+                  <td>Accion</td>
+                  
+          </thead>
+          <tbody>
+              <tr ng-repeat="campos in tabla | filter:busqueda" ng-click="accion(campos.ID_Inventario,
+                                                                                  campos.Codigo,
+                                                                                  campos.Titulo,
+                                                                                  campos.Autor,
+                                                                                  campos.Editorial,
+                                                                                  campos.Edicion,
+                                                                                  campos.Clasificacion,
+                                                                                  campos.Ejemplares)">
+                 <td>{{1}}</td>
+                  <td>{{campos.Codigo}}</td>
+                  <td>{{campos.Titulo}}</td>
+                  <td>{{campos.Autor}}</td>
+                  <td>{{campos.Editorial}}</td>
+                  <td>{{campos.Edicion}}</td>
+                  <td>{{campos.Clasificacion}}</td>
+                  <td>{{campos.Ejemplares}}</td>
+                  <td>
+                        
+                         <md-button class="md-icon-button md-accent" ng-click="actualizar(campos.ID_Inventario,
+                                                                                  campos.Codigo,
+                                                                                  campos.Titulo,
+                                                                                  campos.Autor,
+                                                                                  campos.Editorial,
+                                                                                  campos.Edicion,
+                                                                                  campos.Clasificacion,
+                                                                                  campos.Ejemplares)">
+                         <i class="material-icons">border_color</i>           
+                        </md-button>
+                        <md-button class="md-icon-button md-accent" ng-click="eliminar(campos.ID_Inventario,$event)">
+                         <i class="material-icons">delete_forever</i>           
+                        </md-button>
+                 </td>
+                  
+              </tr>
+          </tbody>
+      </table>
+  </md-content>
+</div>
+</section>

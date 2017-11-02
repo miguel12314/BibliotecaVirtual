@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Flat Login Form 3.0</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+      <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900|RobotoDraft:400,100,300,500,700,900'>
+    <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+      <link rel="stylesheet" href="../css/styleLogin.css">
+
+      <!-- ANGULAR -->
+      <link rel="stylesheet" href="../css/angular-material.min.css">
+      <script src="../js/angular.min.js"></script>
+      <script src="../js/angular-animate.min.js"></script>
+      <script src="../js/angular-aria.min.js"></script>
+      <script src="../js/angular-messages.min.js"></script>
+      <script src="../js/angular-material.min.js"></script>
+        <script src="../js/angular-route.js"></script>
+        <script src="../js/source/controller_Login.js"></script>
+        
+</head>
+
+<body ng-app="biblioteca">
+<!-- Form Mixin-->
+<!-- Input Mixin-->
+<!-- Button Mixin-->
+<!-- Pen Title-->
+<div class="pen-title">
+    <!-- <h1><img src="../images/LOGOITAO20162.jpg" alt=""> </h1> -->
+</div>
+<!-- Form Module-->
+<div class="module form-module" style="width: 400px;">
+  <div class="toggle"><i class="fa fa-times fa-pencil"></i>
+    <!--<div class="tooltip"></div>-->
+  </div>
+  <div class="form">
+   <center><img src="../img/escudo.png" style="/*width:40px;*/" alt=""></center>
+    <h2 style="text-align: center;">Accede a tu cuenta </h2>
+   
+    <form ng-submit="logear()" ng-controller="login">    
+        <input type="number" ng-model="login.usuario" placeholder="Matricula" required>
+        <input type="password" ng-model="login.password" placeholder="Password" required>
+        <button type="submit" class="button">Acceder</button>
+        </form>
+  </div>
+  <div class="form">
+    <center><img src="../img/escudo.png" style="/*width:40px;*/" alt=""></center>
+    <h2 style="text-align: center;">Crear una cuenta</h2>
+    <form ng-controller="registrar" ng-submit="enviar()">
+    <h3>Datos Personales</h3><hr>
+      <input type="text" placeholder="Nombre" ng-model="registro.nombre" required uppercased>
+      <input type="text" placeholder="Apellido Paterno" ng-model="registro.apellidoP" required uppercased>
+      <input type="text" placeholder="Apellido Materno" ng-model="registro.apellidoM" required uppercased>
+      <md-input-container class="md-block" required>
+          <label>Sexo</label>
+          <md-select ng-model="registro.sexo">
+            <md-option><em>Seleccione Sexo</em></md-option>
+            <md-option value="Hombre">Masculino</md-option>
+            <md-option value="Mujer">Femenino</md-option>
+          </md-select>
+        </md-input-container>
+      <input type="text" placeholder="Calle" ng-model="registro.calle" required uppercased>
+      <input type="number" placeholder="No. Interior" ng-model="registro.numeroI">
+      <input type="number" placeholder="No. Exterior" ng-model="registro.numeroE">
+      <input type="text" placeholder="Colonia" ng-model="registro.colonia" required uppercased>
+      <md-input-container class="md-block" required>
+          <label>Delegación</label>
+          <md-select ng-model="registro.delegacion">
+            <md-option><em>Seleccione Delegacion</em></md-option>
+            <md-option ng-repeat="del in delegacion | orderBy" value="{{del}}">{{del}}</md-option>
+          </md-select>
+        </md-input-container>
+      <input type="email" placeholder="Correo" ng-model="registro.correo" required>
+      <input type="password" placeholder="Nueva Contraseña" ng-model="registro.password" required>
+      <input type="password" placeholder="Repita Contraseña" ng-model="registro.rpassword" required>
+      <h3>Datos Escolares</h3><hr>
+      <input type="number" placeholder="Matricula"  ng-model="registro.matricula" required>
+      <md-input-container class="md-block" required>
+          <label>Carrera</label>
+          <md-select ng-model="registro.carrera">
+            <md-option><em>Seleccione Carrera</em></md-option>
+            <md-option ng-repeat="carr in carrera | orderBy" value="{{carr}}">{{carr}}</md-option>
+          </md-select>
+        </md-input-container>
+        <md-input-container class="md-block" required>
+          <label>Semestre</label>
+          <md-select ng-model="registro.semestre">
+            <md-option><em>Seleccione Semestre</em></md-option>
+            <md-option ng-repeat="sem in semestre | orderBy" ng-value="sem.value">{{sem.label}}</md-option>
+          </md-select>
+        </md-input-container>
+      <button type="submit">Registrar</button>
+    </form>
+  </div>
+  <div class="cta"><a href="">¿Olvidaste tu Contraseña?</a></div>
+</div>
+ <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<!--<script src='http://codepen.io/andytran/pen/vLmRVp.js'></script>-->
+
+    <script src="../js/index.js"></script>
+
+</body>
+</html>

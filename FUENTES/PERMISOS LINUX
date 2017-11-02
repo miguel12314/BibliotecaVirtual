@@ -1,0 +1,7 @@
+----------PRIMER PASO PARA DAR PERMISOS A LA CARPETA-------------
+sudo semanage fcontext -a -t httpd_sys_rw_content_t '/var/www/html/arcanaBibliotecaV1.1'
+------------------------------------------------------------------
+
+--------------------SEGUNDO PASO PARA DAR PERMISOS----------------
+sudo restorecon -v '/var/www/html/arcanaBibliotecaV1.1'
+------------------------------------------------------------------
