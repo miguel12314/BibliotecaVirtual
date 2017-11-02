@@ -1,0 +1,164 @@
+﻿<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="A portfolio template that uses Material Design Lite.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <title>Bibliotecario</title>
+    <link rel="stylesheet" href="../css/CssFontGoogle.css">
+    <link rel="stylesheet" href="../css/material.grey-pink.min.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/iconMaterial.css">
+    <link rel="stylesheet" href="../css/angular-data-grid.material.css">
+
+<!--   <script type="text/javascript" src="http://static.fusioncharts.com/code/latest/fusioncharts.js"></script>
+        <script type="text/javascript" src="http://static.fusioncharts.com/code/latest/themes/fusioncharts.theme.ocean.js"></script> -->
+    
+
+
+    <!-- ANGULAR -->
+      <link rel="stylesheet" href="../css/angular-material.min.css">
+
+      <script src="../js/angular.min.js"></script>
+
+      <script src="../js/angular-animate.min.js"></script>
+      <script src="../js/angular-aria.min.js"></script>
+      <script src="../js/angular-messages.min.js"></script>
+      <script src="../js/angular-material.min.js"></script>
+        <script src="../js/angular-route.js"></script>
+<!-- CHART -->
+    <script src="../js/angular-fusioncharts.min.js"></script> 
+        
+
+
+<script src="../js/gridview/pagination.min.js"></script>
+<script src="../js/gridview/dataGrid.min.js"></script>
+
+        <!-- GRIDVIEW -->
+<!-- <script src="js/source/services.js"></script> -->
+    <script src="../js/source/controller_RegistroLibros.js"></script>
+
+    <script src="../js/material.min.js"></script>
+   <!--  <script src="js/mdr-file.min.js"></script> -->
+
+
+
+</head>
+
+
+<body ng-app="biblioteca" ng-controller="registroLibros">
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header mdl-layout__header--waterfall portfolio-header">
+            <div class="mdl-layout__header-row portfolio-logo-row">
+                <span class="mdl-layout__title">
+                    <div class="portfolio-logo"></div>
+                    <span class="mdl-layout__title">Instituto Tecnologico de Álvaro Obregón</span>
+                </span>
+            </div>
+            <div class="mdl-layout__header-row portfolio-navigation-row mdl-layout--large-screen-only">
+                <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
+                    <a class="mdl-navigation__link is-active" href="registroLibros.html">Registro</a>
+                    <a class="mdl-navigation__link" href="bibliotecario.html">Bibliotecario</a>
+                    <a class="mdl-navigation__link" href="actualizarLibro.html">Actualizacion</a>
+                    <a class="mdl-navigation__link" href="contact.html">Contact</a>
+                </nav>
+            </div>
+        </header>
+        <div class="mdl-layout__drawer mdl-layout--small-screen-only">
+            <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
+                <a class="mdl-navigation__link is-active" href="registroLibros.html">Registro</a>
+                <a class="mdl-navigation__link" href="bibliotecario.html">Bibliotecario</a>
+                <a class="mdl-navigation__link" href="actualizarLibro.html">Actualizacion</a>
+                <a class="mdl-navigation__link" href="contact.html">Contact</a>
+            </nav>
+        </div>
+        <main class="mdl-layout__content">
+            <div class="mdl-grid portfolio-max-width portfolio-contact">
+                <div class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp">
+                    <div class="mdl-card__title">
+                        <h2 class="mdl-card__title-text">Registro de Libros</h2>
+                    </div>
+                    <hr>
+                    <div class="mdl-card__media">
+
+                        <!-- <img class="article-image" src=" ../../images/contact-image.jpg" border="0" alt=""> -->
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        <form action="#" class="" ng-submit="enviar($event)">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <input class="mdl-textfield__input" ng-model="Codigo" required type="number">
+                                <label class="mdl-textfield__label"  for="Name">Codigo</label>
+                                <span class="mdl-textfield__error">SOLO NUMEROS</span>
+                            </div>
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <input class="mdl-textfield__input" ng-model="Titulo" required type="text" uppercased>
+                                <label class="mdl-textfield__label"  for="Name">Titulo del Libro</label>
+                                <span class="mdl-textfield__error">TEXTO Y NUMEROS</span>
+                            </div>
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <input class="mdl-textfield__input" ng-model="Autor" required type="text" uppercased> 
+                                <label class="mdl-textfield__label"  for="Name">Nombre del Autor</label>
+                                <span class="mdl-textfield__error">TEXTO Y NUMEROS</span>
+                            </div>
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <md-input-container style="width:100%;">
+                                   <label for="">CLASIFICACION</label>
+                                    <md-select ng-model="Clasificacion">
+                                  <md-optgroup label="CLASIFICACION DE LIBROS">
+                                   <md-option value="TICS">ING. TECNOLOGIAS DE LA INFORMACION Y COMUNICACIONES</md-option>
+                                   <md-option value="IGEM" >ING. GESTION EMPRESARIAL</md-option>
+                                   <md-option value="IDI" >ING. DISEÑO INDUSTRIAL</md-option>
+				   <md-option value="CIENCIAS BASICAS" >CIENCIAS BASICAS</md-option>
+  				   <md-option value="INGLES" >INGLES</md-option>
+				   <md-option value="CULTURAL GENERAL" >CULTURAL GENERAL</md-option>
+                                  </md-optgroup>
+                                </md-select>
+                                </md-input-container>
+                            </div>
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <input class="mdl-textfield__input" ng-model="Editorial" required type="text" uppercased>
+                                <label class="mdl-textfield__label"  for="Name">Editorial</label>
+                                <span class="mdl-textfield__error">TEXTO Y NUMEROS</span>
+                            </div>
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <input class="mdl-textfield__input" ng-model="Edicion" required type="text" uppercased>
+                                <label class="mdl-textfield__label"  for="Name">Edición</label>
+                                <span class="mdl-textfield__error">TEXTO Y NUMEROS</span>
+                            </div>
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <input class="mdl-textfield__input" ng-model="Ejemplares" required type="number">
+                                <label class="mdl-textfield__label"  for="Name">Ejemplares</label>
+                                <span class="mdl-textfield__error">SOLO NUMEROS</span>
+                            </div>
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <div class="md-fab md-button">
+                                  <md-tooltip>
+                                    subir una imagen
+                                  </md-tooltip>
+                                  <md-icon ng-style="{color: font.color}" aria-label="backup" class="material-icons step ng-binding md-48" ng-class="it.size" style="color: rgb(170, 0, 0);">
+                                  backup 
+                                </md-icon>
+                                    <input class="imagenes" file-Model="imagenes" type="file" required></input>
+                                </div>
+                            </div>
+                            
+                            <p>
+                                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit">
+                                    Enviar
+                                </button>
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <pie></pie>
+        </main>
+    </div>
+</body>
+
+</html>
+
+
+

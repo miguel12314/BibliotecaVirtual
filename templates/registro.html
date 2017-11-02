@@ -1,0 +1,86 @@
+<div class="container">
+    <form ng-submit="enviar()">
+        <h2 class="text-center">Datos Personales</h2>
+        <div class="row">
+            <div class="col-md-4 col-xs-12">
+                <label for="">Nombre </label>
+                <input type="text" placeholder="Nombre" ng-model="registro.nombre" required>
+            </div>
+             <div class="col-md-4 col-xs-12">
+                <label for="">Apellido Paterno</label>
+                <input type="text" placeholder="Apellido Paterno" ng-model="registro.apellidoP" required>
+            </div>
+             <div class="col-md-4 col-xs-12">
+                <label for="">Apellido Materno </label>
+                <input type="text" placeholder="Apellido Materno" ng-model="registro.apellidoM" required>
+            </div>
+        </div> 
+        <div class="row">   
+            <div class="col-md-4 col-xs-12">
+                <label for="">Sexo </label><br>
+                <input type="radio" id="sexo" name="sexo" ng-model="registro.sexo" Value="Hombre" required> MASCULINO
+                <input type="radio" id="sexo" name="sexo" ng-model="registro.sexo" value="Mujer" required> FEMENINO
+            </div>
+            <div class="col-md-4 col-xs-12">
+                <label for="">Calle </label>
+                <input type="text" placeholder="Calle" ng-model="registro.calle" required>
+            </div>
+            <div class="col-md-4 col-xs-12">
+                <label for="">No. Interior </label>
+                <input type="number" placeholder="No. Interior" ng-model="registro.numeroI">
+            </div>
+        </div>    
+        <div class="row">    
+            <div class="col-md-4 col-xs-12">
+                <label for="">No. Exterior </label>
+                <input type="number" placeholder="No. Exterior" ng-model="registro.numeroE">
+            </div>
+             <div class="col-md-4 col-xs-12">
+                <label for="">Colonia</label>
+                <input type="text" placeholder="Colonia" ng-model="registro.colonia" required>
+            </div>
+             <div class="col-md-4 col-xs-12">
+                <label for="">Delegación</label>
+                <select class="form-control" ng-model="registro.delegacion" ng-options="del for del in delegacion" required>
+                </select>
+            </div>
+        </div>    
+        <div class="row">    
+             <div class="col-md-4 col-xs-12">
+                <label for="">Correo </label>
+                <input type="email" placeholder="Correo" ng-model="registro.correo" required>
+            </div>
+             <div class="col-md-4 col-xs-12">
+                <label for="">Nueva Contraseña</label>
+                <input type="password" placeholder="Nueva Contraseña" ng-model="registro.password" required>
+            </div>
+            <div class="col-md-4 col-xs-12">
+                <label for="">Repita Contraseña </label>
+                <input type="password" placeholder="Repita Contraseña" ng-model="registro.rpassword" required>
+            </div>
+        </div>
+            <hr>
+            <div class="row">
+              <div class="col-md-12 col-xs-12">
+                    <h2>Datos Escolares</h2>
+               </div>
+               <div class="col-md-4 col-xs-12">
+                    <label for="">Matricula </label>
+                    <input type="number" placeholder="Matricula"  ng-model="registro.matricula" required>
+               </div>
+               <div class="col-md-4 col-xs-12">
+                    <label for="">Carrera </label>
+                    <select class="form-control" name="" id="" ng-model="registro.carrera" ng-options="car for car in carrera" required>
+                    </select>
+               </div>
+               <div class="col-md-4 col-xs-12">
+                    <label for="">Semestre </label>
+                    <select class="form-control" ng-model="registro.semestre" ng-options="sem for sem in semestre"required>
+                    </select>
+               </div>
+            </div>
+            <ul class="pager">
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </ul>
+    </form>
+</div>

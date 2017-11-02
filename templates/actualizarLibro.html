@@ -1,0 +1,231 @@
+<!doctype html>
+<!--
+  Material Design Lite
+  Copyright 2015 Google Inc. All rights reserved.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      https://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License
+-->
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="A portfolio template that uses Material Design Lite.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <title>Bibliotecario</title>
+    <link rel="stylesheet" href="../css/CssFontGoogle.css">
+    <link rel="stylesheet" href="../css/material.grey-pink.min.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/iconMaterial.css">
+    <link rel="stylesheet" href="../css/angular-data-grid.material.css">
+
+<!--   <script type="text/javascript" src="http://static.fusioncharts.com/code/latest/fusioncharts.js"></script>
+        <script type="text/javascript" src="http://static.fusioncharts.com/code/latest/themes/fusioncharts.theme.ocean.js"></script> -->
+    
+
+
+    <!-- ANGULAR -->
+      <link rel="stylesheet" href="../css/angular-material.min.css">
+
+      <script src="../js/angular.min.js"></script>
+
+      <script src="../js/angular-animate.min.js"></script>
+      <script src="../js/angular-aria.min.js"></script>
+      <script src="../js/angular-messages.min.js"></script>
+      <script src="../js/angular-material.min.js"></script>
+        <script src="../js/angular-route.js"></script>
+<!-- CHART -->
+    <script src="../js/angular-fusioncharts.min.js"></script> 
+        
+
+
+<script src="../js/gridview/pagination.min.js"></script>
+<script src="../js/gridview/dataGrid.min.js"></script>
+
+        <!-- GRIDVIEW -->
+<!-- <script src="js/source/services.js"></script> -->
+    <script src="../js/source/controller_Actualizar.js"></script>
+
+    <script src="../js/material.min.js"></script>
+    <!-- <script src="js/mdr-file.min.js"></script> -->
+
+
+
+</head>
+
+
+<body ng-app="biblioteca">
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header" ng-controller="actualizarLibros">
+        <header class="mdl-layout__header mdl-layout__header--waterfall portfolio-header">
+            <div class="mdl-layout__header-row portfolio-logo-row">
+                <span class="mdl-layout__title">
+                    <div class="portfolio-logo"></div>
+                    <span class="mdl-layout__title">Instituto Tecnologico de Álvaro Obregón</span>
+                </span>
+            </div>
+            <div class="mdl-layout__header-row portfolio-navigation-row mdl-layout--large-screen-only">
+                <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
+                    <a class="mdl-navigation__link" href="registroLibros.html">Registro</a>
+                    <a class="mdl-navigation__link" href="bibliotecario.html">Bibliotecario</a>
+                    <a class="mdl-navigation__link is-active" href="actualizarLibro.html">Actualizacion</a>
+                    <a class="mdl-navigation__link" href="contact.html">Contact</a>
+                </nav>
+            </div>
+        </header>
+        <div class="mdl-layout__drawer mdl-layout--small-screen-only">
+            <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
+                <a class="mdl-navigation__link" href="registroLibros.html">Registro</a>
+                <a class="mdl-navigation__link" href="bibliotecario.html">Bibliotecario</a>
+                <a class="mdl-navigation__link is-active" href="actualizarLibro.html">Actualizacion</a>
+                <a class="mdl-navigation__link" href="contact.html">Contact</a>
+            </nav>
+        </div>
+        <main class="mdl-layout__content">
+            <div class="mdl-grid portfolio-max-width">
+                <div class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp">
+                    <div class="mdl-card__title">
+                        <h2 class="mdl-card__title-text">Actualizacion de Libros</h2>
+                    </div>
+                    <div class="mdl-card__media">
+                        <img class="article-image" src="../img/Biblioteca_3.png" border="0" alt="">
+                    </div>
+
+                    <div >
+                        <div class="mdl-cell mdl-cell--12-col mdl-card__supporting-text no-padding ">
+                            <div ng-cloak>
+   <!-- 
+   <md-content class="md-padding">
+    <form ng-submit="enviar($event)">
+        <md-input-container>
+           <label for="">Codigo</label>
+            <input type="text" ng-model="Codigo" required>
+            <div ng-messages="Codigo.$error">
+            <div ng-message="required">Falta Nombre</div>
+          </div>
+        </md-input-container>
+        
+        <div class="md-fab md-button">
+          <md-tooltip>
+            subir una imagen
+          </md-tooltip>
+          <md-icon ng-style="{color: font.color}" aria-label="backup" class="material-icons step ng-binding md-48" ng-class="it.size" style="color: rgb(170, 0, 0);">
+          backup 
+        </md-icon>            
+            <input class="imagenes" file-Model="imagenes" type="file"></input>
+        </div>
+        
+        <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+            <md-button type="submit" class="md-raised md-primary">Enviar</md-button>
+        </section>
+    </form>
+  </md-content> -->
+
+<div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+            <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
+              <i class="material-icons">search</i>
+            </label>
+            <div class="mdl-textfield__expandable-holder md-block">
+              <input class="mdl-textfield__input" type="text" class="md-input" ng-model="busqueda" id="search" placeholder="Buscar Libro"
+              ng-change="gridActions.filter()"
+              filter-by="Titulo"
+              filter-type="text">
+            </div>
+          </div>
+        <div flex-gt-md="100" flex-md="100" flex-xs="100">
+        
+            <div grid-data id='test' grid-options="gridOptions" grid-actions="gridActions">
+
+                <div style="display: block; overflow-x: auto;">
+                    <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+                        <thead>
+                        <tr >
+                            <th sortable="" class="st-sort-disable th-dropdown" style="text-align: left; ">
+                                <span>Codigo</span>
+                            </th>
+                            <th class="st-sort-disable th-dropdown" style="text-align: left; ">
+                                <span>Titulo</span>
+                            </th>
+                            <th sortable="" class="st-sort-disable th-dropdown" style="text-align: left; ">
+                                <span>Autor</span>
+                            </th>
+                            <th sortable='' class="st-sort-disable th-dropdown" style="text-align: left; ">
+                                <span>Editorial</span>
+                            </th>
+                            <th sortable='' class="st-sort-disable th-dropdown" style="text-align: left; ">
+                                <span>Edicion</span>
+                            </th>
+                            <th sortable='' class="st-sort-disable th-dropdown" style="text-align: left; ">
+                                <span>Clasificacion</span>
+                            </th>
+                            <th sortable='' class="st-sort-disable th-dropdown" style="text-align: left; ">
+                                <span>Ejemplares</span>
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr grid-item ng-click="accion(item.ID_Inventario,
+                                                                                  item.Codigo,
+                                                                                  item.Titulo,
+                                                                                  item.Autor,
+                                                                                  item.Editorial,
+                                                                                  item.Edicion,
+                                                                                  item.Clasificacion,
+                                                                                  item.Ejemplares)">
+                            <td ng-bind="item.Codigo" style="text-align: left; "></td>
+                            <td ng-bind="item.Titulo" style="text-align: left; "></td>
+                            <td ng-bind="item.Autor" style="text-align: left; "></td>
+                            <td ng-bind="item.Editorial" style="text-align: left; "></td>
+                            <td ng-bind="item.Edicion" style="text-align: left; "></td>
+                            <td ng-bind="item.Clasificacion" style="text-align: left; "></td>
+                            <td ng-bind="item.Ejemplares" style="text-align: left; "></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div layout-xs="column" layout="row"  layout-align="center">
+                    <grid-pagination max-size="5"
+                                     boundary-links="true"
+                                     class="pagination"
+                                     ng-if="paginationOptions.totalItems  > paginationOptions.itemsPerPage"
+                                     total-items="paginationOptions.totalItems"
+                                     ng-model="paginationOptions.currentPage"
+                                     ng-change="reloadGrid()"
+                                     items-per-page="paginationOptions.itemsPerPage"></grid-pagination>
+                    
+                </div>
+            </div>
+            
+                  </div>  
+     
+</div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <pie></pie>
+        </main>
+    </div>
+
+            
+        </main>
+    </div>
+</body>
+
+</html>
+
+
+
+    
+

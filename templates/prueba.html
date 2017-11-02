@@ -1,0 +1,26 @@
+<section class="wrapper style1">
+    <div ng-cloak>
+   <md-content class="md-padding">
+    <form ng-submit="devolucion($event)">
+           <input type="text" name="" ng-model="hola">
+        <div class="md-fab md-button">
+          <md-tooltip>
+            subir una imagen
+          </md-tooltip>
+          <md-icon ng-style="{color: font.color}" aria-label="backup" class="material-icons step ng-binding md-48" ng-class="it.size" style="color: rgb(170, 0, 0);">
+          backup 
+        </md-icon>
+            
+            <input class="imagenes" file-Model="imagenes" type="file"></input>
+        </div>
+        
+        
+
+        
+        <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+            <md-button type="submit" class="md-raised md-primary">Enviar</md-button>
+        </section>
+    </form>
+  </md-content>
+</div>
+</section>
